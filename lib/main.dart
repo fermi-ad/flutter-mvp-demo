@@ -24,45 +24,80 @@ class RootWidget extends StatefulWidget {
   final String title;
 
   @override
-  State<RootWidget> createState() => _RootState();
+  State<RootWidget> createState() => RootState();
 }
 
-class _RootState extends State<RootWidget> {
-  int _counter = 0;
+class RootState extends State<RootWidget> {
+  String? _device;
 
-  void _incrementCounter() {
+  void setDevice(String name) {
     setState(() {
-      _counter++;
+      _device = name;
+    });
+  }
+
+  void clearDevice() {
+    setState(() {
+      _device = null;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    var core =
+        _device != null ? PlotWidget(state: this) : QueryWidget(state: this);
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        body: core);
+  }
+}
+
+class PlotWidget extends StatelessWidget {
+  const PlotWidget({Key? key, required this.state}) : super(key: key);
+
+  final RootState state;
+
+  @override
+  Widget build(BuildContext context) {
+    var label = 'Plotting ${state._device}';
+
+    return Center(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(label),
+        TextButton(
+          child: const Text('Stop Plot'),
+          onPressed: () {
+            state.clearDevice();
+          },
+        )
+      ],
+    ));
+  }
+}
+
+class QueryWidget extends StatelessWidget {
+  const QueryWidget({Key? key, required this.state}) : super(key: key);
+
+  final RootState state;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const Text('Device to plot:'),
+        Expanded(child: TextField(
+          onSubmitted: (String name) {
+            state.setDevice(name);
+          },
+        ))
+      ],
+    ));
   }
 }
