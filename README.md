@@ -9,7 +9,9 @@ browsers (including progressive web apps.)
 
 Our initial task was to write an app that plots (simulated) data from an ACNET
 device that the user specifies. The web version can be found
-[here](https://www-bd.fnal.gov/controls/demos/flutter_mvp/).
+[here](https://www-bd.fnal.gov/controls/demos/flutter_mvp/). A native Android
+version is downloadable from our [Mobile
+page](https://www-bd.fnal.gov/controls/mobile/).
 
 ## Getting Started
 
