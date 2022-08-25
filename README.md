@@ -2,10 +2,13 @@
 
 This is one of several investigations into application frameworks. This project
 focuses on [Flutter](https://flutter.dev), a framework developed at Google
-using the [Dart language](https://dart.dev). This framework is appealing for several reasons:
-because a Flutter app can be compiled and built for many targets, including
-Android and iOS phones and tablets; Linux, MacOS, and Windows desktops; and
-browsers (including progressive web apps.)
+using the [Dart language](https://dart.dev). This framework is appealing for
+several reasons:
+
+- it uses the popular, React-style of programming
+- its standard library contains a very large set of useful widgets
+- it uses Google's "Material Design" principles, which keeps a consistent look-and-feel between apps.
+- Flutter apps can be compiled and built for many targets, including Android and iOS phones and tablets; Linux, MacOS, and Windows desktops; and browsers (including progressive web apps!)
 
 Our initial task was to write an app that plots (simulated) data from an ACNET
 device that the user specifies. The web version can be found
