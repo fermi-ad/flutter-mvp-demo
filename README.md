@@ -1,16 +1,28 @@
 # flutter_mvp_demo
 
-Controls Department Demo
+This is one of several investigations into application frameworks. This project
+focuses on [Flutter](https://flutter.dev), a framework developed at Google
+using the [Dart language](https://dart.dev). This framework is appealing
+because a Flutter app can be compiled and built for many targets, including
+Android and iOS phones and tablets; Linux, MacOS, and Windows desktops; and
+browsers (including progressive web apps.)
+
+Our initial task was to write an app that plots (simulated) data from an ACNET
+device that the user specifies. The web version can be found
+[here](https://www-bd.fnal.gov/controls/demos/flutter_mvp/).
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To build this app, you'll need the following:
 
-A few resources to get you started if this is your first Flutter project:
+- `git` (to check out the source)
+- [Android Studio](https://developer.android.com/studio/).
+- The [Flutter SDK/Tools](https://docs.flutter.dev/get-started/install)
+- (Mac users) XCode command line tools
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+If you installed Flutter correctly, the following command will check
+your environment for the other tools you'll need: `flutter doctor`.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Once those tools are installed, clone [the project]() from GitHub and
+open the project in Android Studio. Mac users will also be able to
+build iOS versions of the app.
