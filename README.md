@@ -2,7 +2,7 @@
 
 This is one of several investigations into application frameworks. This project
 focuses on [Flutter](https://flutter.dev), a framework developed at Google
-using the [Dart language](https://dart.dev). This framework is appealing
+using the [Dart language](https://dart.dev). This framework is appealing for several reasons:
 because a Flutter app can be compiled and built for many targets, including
 Android and iOS phones and tablets; Linux, MacOS, and Windows desktops; and
 browsers (including progressive web apps.)
