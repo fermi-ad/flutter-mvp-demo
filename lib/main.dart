@@ -105,6 +105,7 @@ class _ChartState extends State<PlotWidget> {
   @override
   Widget build(BuildContext context) {
     var label = 'Plotting ${state._device}';
+    var yBase = ((points.last.y + 2.5) / 5.0).floorToDouble() * 5.0;
 
     return points.isNotEmpty
         ? Center(
@@ -119,10 +120,10 @@ class _ChartState extends State<PlotWidget> {
                   width: 640,
                   height: 480.0,
                   child: LineChart(LineChartData(
-                      minY: 50.0,
-                      maxY: 90.0,
-                      minX: points.first.x,
-                      maxX: points.first.x + pointLimit - 1,
+                      minY: yBase - 10.0,
+                      maxY: yBase + 10.0,
+                      minX: points.last.x - pointLimit + 1,
+                      maxX: points.last.x,
                       clipData: FlClipData.all(),
                       lineBarsData: [LineChartBarData(spots: points)]))),
               ElevatedButton(
