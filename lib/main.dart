@@ -117,7 +117,6 @@ class _ChartState extends State<PlotWidget> {
                   child: Text(label,
                       style: Theme.of(context).textTheme.headline6)),
               SizedBox(
-                  width: 640,
                   height: 480.0,
                   child: LineChart(LineChartData(
                       minY: yBase - 10.0,
